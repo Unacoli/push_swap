@@ -6,18 +6,20 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 17:23:15 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/11 17:23:16 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/11 19:34:58 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	*sa(int *a, int len)
-{
-	int	*tmp;
+#include "../include/push_swap.h"
 
-	if (len == 0 || len == 1)
-		return (0);
-	*tmp = a[0];
-	a[0] = a[1];
-	a[1] = *tmp;
-	return (a);
+void	sa(t_stack *a)
+{
+	int	tmp;
+
+	if (a->len == 0 || a->len == 1)
+		return ;
+	tmp = a->tab[0];
+	a->tab[0] = a->tab[1];
+	a->tab[1] = tmp;
+	ft_putstr("sa\n");
 }

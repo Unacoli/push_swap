@@ -6,18 +6,20 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 17:23:18 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/11 17:23:19 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/11 19:36:21 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	*sb(int *b, int len)
-{
-	int	*tmp;
+#include "../include/push_swap.h"
 
-	if (len == 0 || len == 1)
-		return (0);
-	*tmp = b[0];
-	b[0] = b[1];
-	b[1] = *tmp;
-	return(b);
+void	sb(t_stack *b)
+{
+	int	tmp;
+
+	if (b->len == 0 || b->len == 1)
+		return ;
+	tmp = b->tab[0];
+	b->tab[0] = b->tab[1];
+	b->tab[1] = tmp;
+	ft_putstr("sb\n");
 }

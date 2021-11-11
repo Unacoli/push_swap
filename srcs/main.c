@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 17:13:28 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/11 17:22:33 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/11 20:04:45 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,43 +39,49 @@ void	arg_error(int ac, char **av)
 	}
 }				
 
-void	assign_tab(int **a, int **b, int ac, char **av)
+void	assign_tab(t_stack **a, t_stack **b, int ac, char **av)
 {
 	int	i;
 	int	j;
 
-	*a = malloc(sizeof(int) * (ac - 1));
-	*b = malloc(sizeof(int) * (ac - 1));
-	if (*a == NULL || *b == NULL)
+	*a = malloc(sizeof(t_stack));
+	*b = malloc(sizeof(t_stack));
+	if (a == NULL || b == NULL)
 	{
-		ft_free((void **)a);
-		ft_free((void **)b);
+		//TODO: free stack
+		ft_putstr("Error malloc fail lol\n");
+		exit(EXIT_FAILURE);
+	}
+	(*a)->len = ac - 1;
+	(*b)->len = ac - 1;
+	(*a)->tab = malloc(sizeof(int) * (*a)->len);
+	(*b)->tab = malloc(sizeof(int) * (*b)->len);
+	if ((*a)->tab == NULL || (*b)->tab == NULL)
+	{
+		//TODO: free stack and tab
 		ft_putstr("Error malloc fail lol\n");
 		exit(EXIT_FAILURE);
 	}
 	i = 1;
 	j = 0;
 	while (i != ac)
-	{
-		(*a)[j] = ft_atoi(av[i]);
-		i++;
-		j++;
-	}
+		(*a)->tab[j++] = ft_atoi(av[i++]);
 }
 
-void	check_duplicate(int *a, int len)
+void	check_duplicate(t_stack *a)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	while (i < len)
+	while (i < a->len)
 	{
-		j = i + 1;	
-		while (j < len)
+		j = i + 1;
+		while (j < a->len)
 		{
-			if (a[i] == a[j])
+			if (a->tab[i] == a->tab[j])
 			{
+				free(a->tab);
 				free(a);
 				ft_putstr("Error DUPLICATE TA MERE\n");
 				exit(EXIT_FAILURE);
@@ -88,16 +94,23 @@ void	check_duplicate(int *a, int len)
 
 int	main(int ac, char **av)
 {
-	int	*a;
-	int	*b;
-	int	i;
+	t_stack	*a;
+	t_stack	*b;
+	int	i = 0;
 
 	arg_error(ac, av);
 	assign_tab(&a, &b, ac, av);
-	check_duplicate(a, ac - 1);
+	check_duplicate(a);
 	while (i < ac - 1)
 	{
-		printf("%d %d\n", a[i], b[i]);
+		printf("%d %d\n", a->tab[i], b->tab[i]);
+		i++;
+	}
+	sa(a);
+	i = 0;
+	while (i < ac - 1)
+	{
+		printf("%d %d\n", a->tab[i], b->tab[i]);
 		i++;
 	}
 	printf("\n- -\n%c %c\n", 'a', 'b');

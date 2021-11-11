@@ -6,7 +6,7 @@
 #    By: nargouse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/07 14:54:05 by nargouse          #+#    #+#              #
-#    Updated: 2021/11/11 17:21:41 by nargouse         ###   ########.fr        #
+#    Updated: 2021/11/11 20:06:01 by nargouse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,10 +23,10 @@ OBJS	= $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS)
-	$(CC) $(OBJS) $(LIB) $(LFLAGS) -o $@
+	$(CC) $(OBJS) $(LIB) $(CFLAGS) -o $@
 
 srcs/%.o: srcs/%.c
-	$(CC) -I $(INCLUDE) -c $< -o $@
+	$(CC) -I $(INCLUDE) $(CFLAGS) -c $< -o $@
 
 $(LIBFT):
 	$(MAKE) --no-print-directory -C ./libft 
