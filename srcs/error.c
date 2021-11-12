@@ -6,11 +6,27 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 20:09:40 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/12 01:40:56 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/12 01:53:06 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	int_error(int ac, char **av)
+{
+	int	i;
+
+	i = 1;
+	while (i < ac - 1)
+	{
+		if (ft_atoi(av[i]) > INT_MAX || ft_atoi(av[i]) < INT_MIN)
+		{
+			ft_putstr("Error\n");
+			exit(EXIT_FAILURE);
+		}
+		i++;
+	}
+}
 
 void	arg_error(int ac, char **av)
 {
@@ -37,10 +53,7 @@ void	arg_error(int ac, char **av)
 		}
 		j++;
 	}
-}
-
-void	int_error(int ac, char **av)
-{
+	int_error(ac, av);
 }
 
 void	check_duplicate(t_stack *a)
