@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:55:30 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/12 01:52:15 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/12 03:28:25 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,7 @@ void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
 void	test(t_stack *a, t_stack *b, int ac, char **av);
+void	free_stack(t_stack *stack, t_stack *stack2);
+void	free_tab(t_stack *stack);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 20:13:43 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/12 02:21:19 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/12 03:23:49 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	init_stack(t_stack **stack, int ac)
 	*stack = malloc(sizeof(t_stack));
 	if (stack == NULL)
 	{
-		//TODO: free stack
 		ft_putstr("Error\n");
 		exit(EXIT_FAILURE);
 	}
@@ -25,7 +24,7 @@ void	init_stack(t_stack **stack, int ac)
 	(*stack)->tab = malloc(sizeof(int) * (*stack)->cap);
 	if ((*stack)->tab == NULL)
 	{
-		//TODO: free stack and tab
+		free(*stack);
 		ft_putstr("Error\n");
 		exit(EXIT_FAILURE);
 	}
