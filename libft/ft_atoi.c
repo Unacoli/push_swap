@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 13:17:41 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/11 18:19:58 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/12 01:23:01 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	ft_if(int s)
 		return (0);
 }
 
-int	ft_atoi(const char *str)
+long	ft_atoi(const char *str)
 {
 	unsigned long	n;
 	int				s;

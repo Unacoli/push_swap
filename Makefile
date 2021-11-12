@@ -6,7 +6,7 @@
 #    By: nargouse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/07 14:54:05 by nargouse          #+#    #+#              #
-#    Updated: 2021/11/11 20:06:01 by nargouse         ###   ########.fr        #
+#    Updated: 2021/11/12 00:42:07 by nargouse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ LIBFT	= ./libft/libft.a
 LIB	= $(LIBFT)
 CFLAGS	= -Wall -Werror -Wextra -DLINUX
 
-SRCS	= $(addprefix ./srcs/, main.c pa.c pb.c ra.c rb.c rra.c rrb.c rr.c rrr.c sa.c sb.c ss.c)
+SRCS	= $(addprefix ./srcs/, test.c main.c pa.c pb.c ra.c rb.c rra.c rrb.c rr.c rrr.c sa.c sb.c ss.c error.c stack.c)
 
 OBJS	= $(SRCS:.c=.o)
 

@@ -6,8 +6,24 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 17:22:53 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/11 17:22:55 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/11 23:50:34 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 
+void	rb(t_stack *b)
+{
+	int	tmp;
+	int	i;
+
+	tmp = b->tab[b->len - 1];
+	i = b->len - 1;
+	while (i > 0)
+	{
+		b->tab[i] = b->tab[i - 1];
+		i--;
+	}
+	b->tab[0] = tmp;
+	ft_putstr("rb\n");
+}

@@ -6,7 +6,7 @@
 /*   By: nargouse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 17:38:36 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/11 18:56:28 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/12 01:23:21 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		ft_toupper(int c);
 int		ft_isspace(char c);
 int		ft_isinbase(char c, char *base);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 int		ft_check_base(const char *base);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_atoi_base(const char *str, char *base);

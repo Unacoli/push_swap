@@ -6,8 +6,18 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 17:22:44 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/11 17:22:47 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/11 23:33:50 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "push_swap.h"
 
+void	pb(t_stack *a, t_stack *b)
+{
+	if (a->len == 0)
+		return ;
+	b->len++;
+	b->tab[b->len - 1] = a->tab[a->len - 1];
+	a->len--;
+	ft_putstr("pb\n");
+}
