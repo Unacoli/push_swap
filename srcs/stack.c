@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 20:13:43 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/12 01:11:04 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/12 02:21:19 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ void	assign_tab(t_stack **a, t_stack **b, int ac, char **av)
 	init_stack(b, ac);
 	(*a)->len = ac - 1;
 	(*b)->len = 0;
-	i = 1;
+	i = ac - 1;
 	j = 0;
-	while (i != ac)
-		(*a)->tab[j++] = ft_atoi(av[i++]);
+	while (i >= 0)
+		(*a)->tab[j++] = ft_atoi(av[i--]);
 }
