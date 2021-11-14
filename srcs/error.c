@@ -21,7 +21,7 @@ void	int_error(int ac, char **av)
 	{
 		if (ft_atoi(av[i]) > INT_MAX || ft_atoi(av[i]) < INT_MIN)
 		{
-			ft_putstr("Error\n");
+			ft_putstr_fd("Error\n", STDERR_FILENO);
 			exit(EXIT_FAILURE);
 		}
 		i++;
@@ -34,10 +34,7 @@ void	arg_error(int ac, char **av)
 	int	j;
 
 	if (ac < 2)
-	{
-		ft_putstr("Error nik les arg\n");
-		exit(EXIT_FAILURE);
-	}
+		exit(EXIT_SUCCESS);
 	j = 1;
 	while (j < ac)
 	{
@@ -46,12 +43,17 @@ void	arg_error(int ac, char **av)
 		{
 			if (!(av[j][i] >= '0' && av[j][i] <= '9'))
 			{
-				ft_putstr("Error lol les lettres\n");
+				ft_putstr_fd("Error\n", STDERR_FILENO);
 				exit(EXIT_FAILURE);
 			}
 			i++;
 		}
 		j++;
+	}
+	if (ac == 2)
+	{
+		int_error(ac, av);
+		exit(EXIT_SUCCESS);
 	}
 	int_error(ac, av);
 }
@@ -71,7 +73,7 @@ void	check_duplicate(t_stack *a)
 			{
 				free(a->tab);
 				free(a);
-				ft_putstr("Error DUPLICATE TA MERE\n");
+				ft_putstr_fd("Error\n", STDERR_FILENO);
 				exit(EXIT_FAILURE);
 			}
 			j++;
