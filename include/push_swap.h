@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:55:30 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/12 03:28:25 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/16 04:46:13 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,11 @@ void	rrr(t_stack *a, t_stack *b);
 void	test(t_stack *a, t_stack *b, int ac, char **av);
 void	free_stack(t_stack *stack, t_stack *stack2);
 void	free_tab(t_stack *stack);
+void	choose_algo(t_stack *a, t_stack *b);
+void	sort_3(t_stack *a);
+void	sort_under_5(t_stack *a, t_stack *b);
+void	sort_under_100(t_stack *a, t_stack *b);
+void	sort_under_500(t_stack *a, t_stack *b);
+void	sort_over_500(t_stack *a, t_stack *b);
 
 #endif
