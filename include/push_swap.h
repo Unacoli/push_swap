@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:55:30 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/17 17:21:20 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/17 17:39:53 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ void	rrr(t_stack *a, t_stack *b);
 void	test(t_stack *a, t_stack *b);
 void	free_stack(t_stack *stack, t_stack *stack2);
 void	free_tab(t_stack *stack);
+int		already_sorted(t_stack *a);
 void	choose_algo(t_stack *a, t_stack *b);
 int		find_max(t_stack *stack);
 void	sort_3(t_stack *a);
