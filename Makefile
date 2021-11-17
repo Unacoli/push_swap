@@ -6,7 +6,7 @@
 #    By: nargouse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/07 14:54:05 by nargouse          #+#    #+#              #
-#    Updated: 2021/11/16 02:55:55 by nargouse         ###   ########.fr        #
+#    Updated: 2021/11/17 17:21:37 by nargouse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	= push_swap
 INCLUDE = ./include
 LIBFT	= ./libft/libft.a
 LIB	= $(LIBFT)
-CFLAGS	= -Wall -Werror -Wextra -DLINUX
+CFLAGS	+= -Wall -Werror -Wextra -DLINUX
 
 SRCS	= $(addprefix ./srcs/, test.c main.c free.c pa.c pb.c ra.c rb.c rra.c rrb.c rr.c rrr.c sa.c sb.c ss.c error.c stack.c sort.c sort_3.c sort_under_5.c sort_under_100.c sort_under_500.c sort_over_500.c)
 
