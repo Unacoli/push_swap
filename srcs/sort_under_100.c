@@ -6,47 +6,11 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 02:56:21 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/18 17:26:13 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/18 21:35:25 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-size_t	find_min_i(t_stack *a)
-{
-	size_t	i;
-	size_t	min_i;
-	int		min;
-
-	i = 0;
-	min = a->tab[0];
-	while (i < a->len)
-	{
-		if (a->tab[i] < min)
-		{
-			min = a->tab[i];
-			min_i = i;
-		}
-		i++;
-	}
-	return (min_i);
-}
-
-int	find_min(t_stack *a)
-{
-	size_t	i;
-	int		min;
-
-	i = 0;
-	min = a->tab[0];
-	while (i < a->len)
-	{
-		if (a->tab[i] < min)
-			min = a->tab[i];
-		i++;
-	}
-	return (min);
-}
 
 void	sort_under_100(t_stack *a, t_stack *b)
 {
