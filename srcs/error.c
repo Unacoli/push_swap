@@ -6,11 +6,17 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 01:03:57 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/18 18:28:10 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/18 19:06:17 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	quit(void)
+{
+	ft_putstr_fd("Error\n", STDERR_FILENO);
+	exit(EXIT_FAILURE);
+}
 
 void	int_error(int ac, char **av)
 {
@@ -20,10 +26,7 @@ void	int_error(int ac, char **av)
 	while (i < ac)
 	{
 		if (ft_atoi(av[i]) > INT_MAX || ft_atoi(av[i]) < INT_MIN)
-		{
-			ft_putstr_fd("Error\n", STDERR_FILENO);
-			exit(EXIT_FAILURE);
-		}
+			quit();
 		i++;
 	}
 }
@@ -40,18 +43,12 @@ void	arg_error(int ac, char **av)
 		while (av[j][i])
 		{
 			if (!((av[j][i] >= '0' && av[j][i] <= '9') || av[j][i] == '-'))
-			{
-				if (av[j][i] == '-' && !(av[j][i + 1] >= '0' && av[j][i + 1] <= '9'))
-				{
-					ft_putstr_fd("Error\n", STDERR_FILENO);
-					exit(EXIT_FAILURE);
-				}
-				ft_putstr_fd("Error\n", STDERR_FILENO);
-				exit(EXIT_FAILURE);
-			}
+				quit();
 			i++;
 		}
 		j++;
+		if (i == 0)
+			quit();
 	}
 	int_error(ac, av);
 }
@@ -71,8 +68,7 @@ void	check_duplicate(t_stack *a)
 			{
 				free(a->tab);
 				free(a);
-				ft_putstr_fd("Error\n", STDERR_FILENO);
-				exit(EXIT_FAILURE);
+				quit();
 			}
 			j++;
 		}

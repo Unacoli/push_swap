@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:55:30 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/18 16:44:11 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/18 19:06:45 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	check_duplicate(t_stack *a);
 void	arg_error(int ac, char **av);
 void	assign_tab(t_stack **a, t_stack **b, int ac, char **av);
 int		already_sorted(t_stack *a);
+void	quit(void);
 
 void	sa(t_stack *a);
 void	sb(t_stack *b);
