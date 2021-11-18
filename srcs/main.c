@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 17:13:28 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/18 14:18:23 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/18 18:19:41 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,11 @@ int	main(int ac, char **av)
 	t_stack	*a;
 	t_stack	*b;
 
+	if (ac < 2)
+		exit(EXIT_SUCCESS);
 	arg_error(ac, av);
+	if (ac == 2)
+		exit(EXIT_SUCCESS);
 	assign_tab(&a, &b, ac, av);
 	check_duplicate(a);
 	if (already_sorted(a) == 1)
@@ -27,7 +31,10 @@ int	main(int ac, char **av)
 		free_stack(a, b);
 		exit(EXIT_SUCCESS);
 	}
-	choose_algo(a, b);
-	free_stack(a, b);
-	exit(EXIT_SUCCESS);
+	else
+	{
+		choose_algo(a, b);
+		free_stack(a, b);
+		exit(EXIT_SUCCESS);
+	}
 }

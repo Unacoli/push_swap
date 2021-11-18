@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 02:05:29 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/18 14:31:57 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/18 17:37:56 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,4 @@ void	sort_under_5(t_stack *a, t_stack *b)
 		while (a->tab[0] < a->tab[a->len - 1])
 			ra(a);
 	}
-	test(a, b);
 }

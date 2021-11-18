@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 01:09:40 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/18 14:16:59 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/18 18:17:42 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	already_sorted(t_stack *a)
 			return (0);
 		i++;
 	}
-	printf("ewo from sorting");
 	return (1);
 }
 
@@ -45,10 +44,8 @@ void	choose_algo(t_stack *a, t_stack *b)
 		sort_under_5(a, b);
 	if (a->len >= 6 && a->len <= 99)
 		sort_under_100(a, b);
-	if (a->len >= 100 && a->len <= 499)
+	if (a->len >= 100)
 		sort_under_500(a, b);
-	if (a->len >= 500)
-		sort_over_500(a, b);
 	free_tab(a);
 	free_tab(b);
 }

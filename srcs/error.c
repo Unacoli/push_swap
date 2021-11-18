@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 01:03:57 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/16 01:04:12 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/18 18:28:10 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	int_error(int ac, char **av)
 	int	i;
 
 	i = 1;
-	while (i < ac - 1)
+	while (i < ac)
 	{
 		if (ft_atoi(av[i]) > INT_MAX || ft_atoi(av[i]) < INT_MIN)
 		{
@@ -33,27 +33,25 @@ void	arg_error(int ac, char **av)
 	int	i;
 	int	j;
 
-	if (ac < 2)
-		exit(EXIT_SUCCESS);
 	j = 1;
 	while (j < ac)
 	{
 		i = 0;
 		while (av[j][i])
 		{
-			if (!(av[j][i] >= '0' && av[j][i] <= '9'))
+			if (!((av[j][i] >= '0' && av[j][i] <= '9') || av[j][i] == '-'))
 			{
+				if (av[j][i] == '-' && !(av[j][i + 1] >= '0' && av[j][i + 1] <= '9'))
+				{
+					ft_putstr_fd("Error\n", STDERR_FILENO);
+					exit(EXIT_FAILURE);
+				}
 				ft_putstr_fd("Error\n", STDERR_FILENO);
 				exit(EXIT_FAILURE);
 			}
 			i++;
 		}
 		j++;
-	}
-	if (ac == 2)
-	{
-		int_error(ac, av);
-		exit(EXIT_SUCCESS);
 	}
 	int_error(ac, av);
 }

@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 02:56:21 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/18 14:10:53 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/18 17:26:13 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int	find_min(t_stack *a)
 
 void	sort_under_100(t_stack *a, t_stack *b)
 {
+//	int	hold_first;
+//	int	hold_second;
 	int	min;
 
 	test(a, b);
