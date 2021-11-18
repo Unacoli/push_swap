@@ -1,0 +1,24 @@
+void print_stacks(t_stack *a, t_stack *b)
+{
+    size_t i;
+
+    i = a->len - 1;
+    while (i < a->len || i < b->len)
+    {
+        ft_putchar('[');
+        ft_putnbr(i);
+        ft_putstr("] ");
+        if (i < a->len)
+            ft_putnbr(a->tab[i]);
+        else
+            ft_putchar('x');
+        ft_putchar(' ');
+        if (i < b->len)
+            ft_putnbr(b->tab[i]);
+        else
+            ft_putchar('x');
+        ft_putchar('\n');
+        i--;
+    }
+    ft_putstr("    ━━━\n    a b\n\n");
+}

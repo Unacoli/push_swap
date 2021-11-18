@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 02:05:29 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/18 17:37:56 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/18 20:56:56 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +39,35 @@ void	sort_under_5(t_stack *a, t_stack *b)
 	{
 		if (find_max(a) > b->tab[b->len - 1])
 		{	
-			if (find_min_i(a) < a->len / 2)
+			if (find_min_i(a) > a->len / 2)
 				while (b->tab[b->len - 1] > a->tab[a->len - 1])
+				{
 					ra(a);
+					printf("ra1\n");
+				}
 			else
 				while (b->tab[b->len - 1] > a->tab[a->len - 1])
+				{
 					rra(a);
+					printf("rra1\n");
+				}
 		}
-		pa(a, b);
-		while (a->tab[0] < a->tab[a->len - 1])
-			ra(a);
+		pa(a, b);		
+		if (find_min_i(a) > a->len / 2)
+		{
+			while (a->tab[0] < a->tab[a->len - 1])
+			{	
+				ra(a);
+				printf("ra2\n");
+			}
+		}
+		else
+		{
+			while (a->tab[0] < a->tab[a->len - 1])
+			{	
+				rra(a);
+				printf("rra2\n");
+			}
+		}
 	}
 }
