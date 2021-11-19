@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 02:56:21 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/19 11:47:52 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/19 12:26:54 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,23 +127,27 @@ void	sort_under_100(t_stack *a, t_stack *b)
 			else
 			{
 				int next = b->tab[find_next(b, a->tab[a->len - 1])];
-				int ko = 0;
+//				int	prev = b->tab[find_prev(b, a->tab[a->len - 1])];
+//				int ko = 0;
 				while (find_i(b, next) != 0)
 				{
 					//printf("find_next of %d is index %ld (%d)\n", a->tab[a->len - 1], find_i(b, next), next);
 					rb(b);
 					//test(a,b);
-					ko++;
+	//				ko++;
 				}
 				//printf("=-=-=-=-=-= %d %d %d\n", a->tab[a->len - 1], find_prev(b, a->tab[a->len - 1]), b->tab[find_prev(b, a->tab[a->len - 1])]);
 				//test(a,b);
-				pb(a, b);
+//				pb(a, b);
 				//test(a,b);
 				//printf("else\n");
-				while (ko > 0)
+//				while (ko > 0)
+				pb(a, b);
+				while (find_i(b, find_max(b)) != b->len - 1)
+//				while (find_i(b, next) != b->len - 1)
 				{
 					rrb(b);
-					ko--;
+//					ko--;
 				}
 			}
 			//printf("----------------\n\n");
