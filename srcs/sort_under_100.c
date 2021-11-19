@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 02:56:21 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/19 05:28:27 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/19 05:50:13 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,31 @@ void	sort_under_100(t_stack *a, t_stack *b)
 			hold_first = scan_a_top(a, chunk_min, chunk_max);
 			hold_second = scan_a_bottom(a, chunk_min, chunk_max);
 			if ((size_t)hold_second < a->cap - hold_first)
-				while (hold_second-- > 0)
+			{
+				while (hold_second >= 0)
+				{
 					rra(a);
+					hold_second--;
+					if (hold_second == -1)
+					{
+						hold_second = a->len - 1;
+						break ;
+					}
+				}
+				printf("hd %d %d %d\n", hold_second, a->tab[hold_second], a->tab[a->len - 1]);
+				test(a, b);
+			}
 			else
-				while ((size_t)hold_first++ < a->len)
+			{
+				while ((size_t)hold_first < a->len - 1)
+				{
 					ra(a);
+					hold_first++;
+				}
+				printf("hf %d %d %d\n", hold_first, a->tab[hold_first], a->tab[a->len - 1]);
+				test(a, b);
+			}
+
 			pb(a, b);
 		}
 		chunk++;
