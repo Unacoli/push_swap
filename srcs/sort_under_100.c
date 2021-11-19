@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 02:56:21 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/19 08:56:40 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/19 11:47:52 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,12 @@ void	sort_under_100(t_stack *a, t_stack *b)
 	max = find_max(a);
 	test(a, b);
 	chunk = 1;
-	//printf("min: %d max: %d\n---\n", min, max);
+//	printf("min: %d max: %d\n---\n", min, max);
 	while (chunk < 6)
 	{
 		chunk_min = min + ((chunk - 1) * (max - min) * 20/100) + (chunk == 1 ? 0 : 1);
 		chunk_max = min + (chunk * (max - min) * 20/100);
-		//printf("CHUNK chunk: %d chunk_min: %d chunk_max: %d\n", chunk, chunk_min, chunk_max);
+//		printf("CHUNK chunk: %d chunk_min: %d chunk_max: %d\n", chunk, chunk_min, chunk_max);
 		while (scan_a_top(a, chunk_min, chunk_max) != -1)
 		{
 			hold_first = scan_a_top(a, chunk_min, chunk_max);
@@ -101,15 +101,15 @@ void	sort_under_100(t_stack *a, t_stack *b)
 					}
 				}
 				//printf("hold_second %d %d %d\n", hold_second, a->tab[hold_second], a->tab[a->len - 1]);
-				//test(a, b);
+				test(a, b);
 			}
-			
-
-			if (a->tab[a->len - 1] > find_max(b))
+			if (b->len == 0)
+				pb(a, b);
+			else if (a->tab[a->len - 1] > find_max(b))
 			{
 				while (b->tab[find_min_i(b)] != b->tab[0])
 				{
-					//if (b->tab[b->len - 1] != a->tab[a->len - 1] -1)
+					if (b->tab[b->len - 1] != a->tab[a->len - 1])
 					rb(b);
 				}
 				pb(a, b);
@@ -123,7 +123,6 @@ void	sort_under_100(t_stack *a, t_stack *b)
 				pb(a, b);
 				//test(a,b);
 				//printf("else if\n");
-				rrb(b);
 			}
 			else
 			{
@@ -131,7 +130,7 @@ void	sort_under_100(t_stack *a, t_stack *b)
 				int ko = 0;
 				while (find_i(b, next) != 0)
 				{
-					//printf("find_next of %d is index %d (%d)\n", a->tab[a->len - 1], next, b->tab[next]);
+					//printf("find_next of %d is index %ld (%d)\n", a->tab[a->len - 1], find_i(b, next), next);
 					rb(b);
 					//test(a,b);
 					ko++;
@@ -179,11 +178,4 @@ void	sort_under_100(t_stack *a, t_stack *b)
 
 	while (b->len > 0)
 		pa(a, b);
-	//pb(a, b);
-	//pb(a, b);
-	//pb(a, b);
-	//sb(b);
-	//pa(a, b);
-	//pa(a, b);
-	//pa(a, b);
 }

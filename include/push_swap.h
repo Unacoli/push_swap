@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:55:30 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/19 00:47:57 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/19 11:59:55 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ typedef struct s_stack	t_stack;
 
 void	test(t_stack *a, t_stack *b);
 
-void	check_duplicate(t_stack *a);
+void	check_duplicate(t_stack *a, t_stack *b);
 void	arg_error(int ac, char **av);
 void	assign_tab(t_stack **a, t_stack **b, int ac, char **av);
 int		already_sorted(t_stack *a);
-void	quit(void);
+void	quit(t_stack *a, t_stack *b);
 
 void	sa(t_stack *a);
 void	sb(t_stack *b);
@@ -56,7 +56,7 @@ void	sort_under_5(t_stack *a, t_stack *b);
 void	sort_under_100(t_stack *a, t_stack *b);
 void	sort_under_500(t_stack *a, t_stack *b);
 
-void	free_stack(t_stack *stack, t_stack *stack2);
+void	free_stack(t_stack *stack);
 void	free_tab(t_stack *stack);
 
 #endif

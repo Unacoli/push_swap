@@ -6,18 +6,16 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 03:04:27 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/16 04:29:28 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/19 11:59:29 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_stack(t_stack *stack, t_stack *stack2)
+void	free_stack(t_stack *stack)
 {
 	free(stack);
- 	free(stack2);
 	stack = NULL;
-	stack2 = NULL;
 }
 
 void	free_tab(t_stack *stack)
