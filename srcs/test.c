@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 00:36:49 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/18 14:01:45 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/19 06:43:07 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	test(t_stack *a, t_stack *b)
 	i = (int)a->cap - 1;
 	while (i >= 0)
 	{
+		fprintf(stderr, "[%d] ", i);
 		if (i < (int)a->len)
 			fprintf(stderr, "%d ", a->tab[i]);
 		else
@@ -29,5 +30,5 @@ void	test(t_stack *a, t_stack *b)
 			fprintf(stderr, "x\n");
 		i--;
 	}
-	fprintf(stderr, "- -\n%c %c\n\n", 'a', 'b');
+	fprintf(stderr, "    - -\n    %c %c\n\n", 'a', 'b');
 }
