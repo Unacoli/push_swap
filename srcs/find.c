@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/18 21:33:06 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/18 21:34:39 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/19 01:02:33 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,3 +65,30 @@ int	find_min(t_stack *a)
 	return (min);
 }
 
+int	scan_a_top(t_stack *a, int chunk_min, int chunk_max)
+{
+	size_t	i;
+
+	i = a->len - 1;
+	while ((int)i >= 0)
+	{
+		if (a->tab[i] >= chunk_min && a->tab[i] <= chunk_max)
+			return (i);
+		i--;
+	}
+	return (-1);
+}
+
+int	scan_a_bottom(t_stack *a, int chunk_min, int chunk_max)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < a->len)
+	{
+		if (a->tab[i] >= chunk_min && a->tab[i] <= chunk_max)
+			return (i);
+		i++;
+	}
+	return (-1);
+}

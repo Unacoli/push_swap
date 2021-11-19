@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:55:30 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/18 21:08:11 by nargouse         ###   ########.fr       */
+/*   Updated: 2021/11/19 00:47:57 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void	choose_algo(t_stack *a, t_stack *b);
 int		find_max(t_stack *stack);
 int		find_min(t_stack *stack);
 size_t	find_min_i(t_stack *a);
+int		scan_a_top(t_stack *stack, int min, int max);
+int		scan_a_bottom(t_stack *stack, int min, int max);
 void	sort_3(t_stack *a);
 void	sort_under_5(t_stack *a, t_stack *b);
 void	sort_under_100(t_stack *a, t_stack *b);
