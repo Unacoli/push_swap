@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_under_100.c                                   :+:      :+:    :+:   */
+/*   sort_over_5.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 02:56:21 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/19 12:26:54 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/19 18:06:31 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ size_t	find_i(t_stack *a, int num)
 	return (i);
 }
 
-void	sort_under_100(t_stack *a, t_stack *b)
+void	sort_over_5(t_stack *a, t_stack *b)
 {
 	int	hold_first;
 	int	hold_second;

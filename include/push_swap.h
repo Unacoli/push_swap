@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:55:30 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/19 11:59:55 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/19 18:01:10 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,7 @@ int		scan_a_top(t_stack *stack, int min, int max);
 int		scan_a_bottom(t_stack *stack, int min, int max);
 void	sort_3(t_stack *a);
 void	sort_under_5(t_stack *a, t_stack *b);
-void	sort_under_100(t_stack *a, t_stack *b);
-void	sort_under_500(t_stack *a, t_stack *b);
+void	sort_over_5(t_stack *a, t_stack *b);
 
 void	free_stack(t_stack *stack);
 void	free_tab(t_stack *stack);
