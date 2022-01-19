@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 01:09:40 by nargouse          #+#    #+#             */
-/*   Updated: 2022/01/19 18:00:30 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/19 20:59:33 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	choose_algo(t_stack *a, t_stack *b)
 		sort_3(a);
 	if (a->len == 4 || a->len == 5)
 		sort_under_5(a, b);
-	if (a->len <= 6)
+	if (a->len >= 6)
 		sort_over_5(a, b);
 	test(a, b);
 	free_tab(a);
