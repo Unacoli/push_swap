@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 17:13:28 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/19 12:02:34 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/26 17:45:48 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ int	main(int ac, char **av)
 	}
 	else
 	{
+		assign_index(&a);
 		choose_algo(a, b);
 		free_stack(a);
 		free_stack(b);

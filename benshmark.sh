@@ -6,8 +6,8 @@ SUM=0
 
 for i in {1..50}
 do
-		export ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"`
-		if ./push_swap $ARG | ./checker $ARG | grep -q KO
+		export ARG=`ruby -e "puts (1..10).to_a.shuffle.join(' ')"`
+		if ./push_swap $ARG | ./checker_linux $ARG | grep -q KO
 		then
 			echo "Error!"
 			echo $ARG

@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:55:30 by nargouse          #+#    #+#             */
-/*   Updated: 2022/01/26 02:32:32 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/26 17:00:02 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ struct	s_stack
 	size_t	index;
 	size_t	len;
 	size_t	cap;
+	struct	s_stack *next;
 };
 typedef struct s_stack	t_stack;
 

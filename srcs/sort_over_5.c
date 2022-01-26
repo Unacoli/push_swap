@@ -6,60 +6,55 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 02:56:21 by nargouse          #+#    #+#             */
-/*   Updated: 2022/01/26 02:18:12 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/26 17:48:58 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_prev(t_stack *a, int num)
+static int	get_max_bits(t_stack *a)
 {
-	int	i;
+	t_stack	*grid;
+	int		max;
+	int		max_bits;
 
-	i = a->len - 1;
-	while (i >= 0)
+	grid = a;
+	max = a->index;
+	max_bits = 0;
+	while (grid)
 	{
-		if (a->tab[i] < num)
-			return (i);
-		i--;
+		if ((int)a->index > max)
+			max = a->index;
+		grid = grid->next;
 	}
-	return (0);
-}
-
-int	find_next(t_stack *b, int num)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < b->len)
-	{
-		if (b->tab[i] > num)
-			return (i);
-		i++;
-	}
-	return (i);
-}
-
-size_t	find_i(t_stack *a, int num)
-{
-	size_t	i;
-
-	i = 0;
-	while (i < a->len)
-	{
-		if (a->tab[i] == num)
-			return (i);
-		i++;
-	}
-	return (i);
+	while ((max >> max_bits) != 0)
+		max_bits++;
+	return (max_bits);
 }
 
 void	sort_over_5(t_stack *a, t_stack *b)
 {
-	int		top_a;
+	t_stack	*grid;
 	int		i;
 	int		j;
+	int		max_bits;
 
 	i = 0;
-	top_a = a->tab[a->len - 1]
-
+	grid = a;
+	max_bits = get_max_bits(a);
+	while (i < max_bits)
+	{
+		j = 0;
+		while (j++ < (int)a->cap)
+		{
+			grid = a;
+			if (((grid->index >> i) & 1) == 1)
+				ra(a);
+			else
+				pb(a, b);
+		}
+		while (b->len - 1 != 0)
+			pa(a, b);
+		i++;
+	}
+}
