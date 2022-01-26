@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 02:56:21 by nargouse          #+#    #+#             */
-/*   Updated: 2022/01/19 20:58:11 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/26 02:18:12 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,78 +56,10 @@ size_t	find_i(t_stack *a, int num)
 
 void	sort_over_5(t_stack *a, t_stack *b)
 {
-	int	hold_first;
-	int	hold_second;
-	int	min;
-	int	max;
-	int	chunk;
-	int	chunk_min;
-	int	chunk_max;
+	int		top_a;
+	int		i;
+	int		j;
 
-	min = find_min(a);
-	max = find_max(a);
-	test(a, b);
-	chunk = 1;
-	while (chunk < 6)
-	{
-		chunk_min = min + ((chunk - 1) * (max - min) * 20/100) + (chunk == 1 ? 0 : 1);
-		chunk_max = min + (chunk * (max - min) * 20/100);
-		while (scan_a_top(a, chunk_min, chunk_max) != -1)
-		{
-			hold_first = scan_a_top(a, chunk_min, chunk_max);
-			hold_second = scan_a_bottom(a, chunk_min, chunk_max);
-			if ((size_t)hold_second >= a->cap - hold_first - 1)
-			{
-				while ((size_t)hold_first < a->len - 1)
-				{
-					ra(a);
-					hold_first++;
-				}
-			}
-			else
-			{
-				while (hold_second >= 0)
-				{
-					rra(a);
-					hold_second--;
-					if (hold_second == -1)
-					{
-						hold_second = a->len - 1;
-						break ;
-					}
-				}
-				//test(a, b);
-			}
-			if (b->len == 0)
-				pb(a, b);
-			else if (a->tab[a->len - 1] > find_max(b))
-			{
-				while (b->tab[find_min_i(b)] != b->tab[0])
-				{
-					if (b->tab[b->len - 1] != a->tab[a->len - 1])
-					rb(b);
-				}
-				pb(a, b);
-			}
-			else if (a->tab[a->len - 1] < find_min(b))
-			{
-				while (b->tab[find_min_i(b)] != b->tab[0])
-					rrb(b);
-				pb(a, b);
-			}
-			else
-			{
-				int next = b->tab[find_next(b, a->tab[a->len - 1])];
-				while (find_i(b, next) != 0)
-					rb(b);
-				pb(a, b);
-				while (find_i(b, find_max(b)) != b->len - 1)
-					rrb(b);
-			}
+	i = 0;
+	top_a = a->tab[a->len - 1]
 
-		}
-		chunk++;
-	}
-	while (b->len > 0)
-		pa(a, b);
-}
