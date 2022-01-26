@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 02:56:21 by nargouse          #+#    #+#             */
-/*   Updated: 2022/01/26 17:48:58 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/27 00:58:48 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ static int	get_max_bits(t_stack *a)
 	int		max_bits;
 
 	grid = a;
-	max = a->index;
+	max = grid->index;
 	max_bits = 0;
 	while (grid)
 	{
-		if ((int)a->index > max)
-			max = a->index;
+		if ((int)grid->index > max)
+			max = grid->index;
 		grid = grid->next;
 	}
 	while ((max >> max_bits) != 0)
@@ -45,7 +45,7 @@ void	sort_over_5(t_stack *a, t_stack *b)
 	while (i < max_bits)
 	{
 		j = 0;
-		while (j++ < (int)a->cap)
+		while (j++ < (int)grid->cap)
 		{
 			grid = a;
 			if (((grid->index >> i) & 1) == 1)
@@ -53,7 +53,7 @@ void	sort_over_5(t_stack *a, t_stack *b)
 			else
 				pb(a, b);
 		}
-		while (b->len - 1 != 0)
+		while (b->len != 0)
 			pa(a, b);
 		i++;
 	}
