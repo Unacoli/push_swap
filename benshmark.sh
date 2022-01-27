@@ -4,9 +4,9 @@ LIMIT=700
 FILE=problem_100
 SUM=0
 
-for i in {1..50}
+for i in {1..100}
 do
-		export ARG=`ruby -e "puts (1..10).to_a.shuffle.join(' ')"`
+		export ARG=`ruby -e "puts (1..300).to_a.shuffle.join(' ')"`
 		if ./push_swap $ARG | ./checker_linux $ARG | grep -q KO
 		then
 			echo "Error!"

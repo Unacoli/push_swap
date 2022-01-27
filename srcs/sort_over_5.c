@@ -6,27 +6,33 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 02:56:21 by nargouse          #+#    #+#             */
-/*   Updated: 2022/01/27 00:58:48 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/28 00:49:49 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	get_max_bits(t_stack *a)
+int	get_index(t_stack *a, int n)
 {
-	t_stack	*grid;
+	int	i;
+
+	i = 0;
+	while (a->index[i] < (int)a->cap)
+	{
+		if (a->index[i] == n)
+			return (i);
+		i++;
+	}
+	return (-1);	
+}
+
+int	get_max_bits(t_stack *a)
+{
 	int		max;
 	int		max_bits;
 
-	grid = a;
-	max = grid->index;
+	max = a->cap - 1;
 	max_bits = 0;
-	while (grid)
-	{
-		if ((int)grid->index > max)
-			max = grid->index;
-		grid = grid->next;
-	}
 	while ((max >> max_bits) != 0)
 		max_bits++;
 	return (max_bits);
@@ -34,21 +40,18 @@ static int	get_max_bits(t_stack *a)
 
 void	sort_over_5(t_stack *a, t_stack *b)
 {
-	t_stack	*grid;
 	int		i;
 	int		j;
 	int		max_bits;
 
 	i = 0;
-	grid = a;
 	max_bits = get_max_bits(a);
 	while (i < max_bits)
 	{
 		j = 0;
-		while (j++ < (int)grid->cap)
+		while (j++ < (int)a->cap)
 		{
-			grid = a;
-			if (((grid->index >> i) & 1) == 1)
+			if (((get_index(a, a->tab[a->len - 1]) >> i) & 1) == 1)
 				ra(a);
 			else
 				pb(a, b);

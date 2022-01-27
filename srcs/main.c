@@ -6,11 +6,13 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 17:13:28 by nargouse          #+#    #+#             */
-/*   Updated: 2022/01/26 19:12:04 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/28 00:35:36 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	get_max_bits(t_stack *a);
 
 int	main(int ac, char **av)
 {
@@ -34,8 +36,7 @@ int	main(int ac, char **av)
 	}
 	else
 	{
-		assign_index(&a);
-		test(a, b);
+		assign_index(a);
 		choose_algo(a, b);
 		free_stack(a);
 		free_stack(b);

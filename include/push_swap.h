@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:55:30 by nargouse          #+#    #+#             */
-/*   Updated: 2022/01/26 17:00:02 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/27 22:54:29 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@
 struct	s_stack
 {
 	int		*tab;
-	size_t	index;
+	int		*index;
 	size_t	len;
 	size_t	cap;
-	struct	s_stack *next;
 };
 typedef struct s_stack	t_stack;
 
@@ -32,7 +31,7 @@ void	test(t_stack *a, t_stack *b);
 void	check_duplicate(t_stack *a, t_stack *b);
 void	arg_error(int ac, char **av);
 void	assign_tab(t_stack **a, t_stack **b, int ac, char **av);
-void	assign_index(t_stack **a);
+void	assign_index(t_stack *a);
 int		already_sorted(t_stack *a);
 void	quit(t_stack *a, t_stack *b);
 

@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 20:13:43 by nargouse          #+#    #+#             */
-/*   Updated: 2022/01/26 16:21:33 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/27 23:16:36 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,13 @@ void	init_stack(t_stack **stack, int ac)
 		quit(NULL, NULL);
 	(*stack)->cap = ac - 1;
 	(*stack)->tab = malloc(sizeof(int) * (*stack)->cap);
+	(*stack)->index = malloc(sizeof(int) * (*stack)->cap);
 	if ((*stack)->tab == NULL)
+	{
+		free(*stack);
+		quit(NULL, NULL);
+	}
+	if ((*stack)->index == NULL)
 	{
 		free(*stack);
 		quit(NULL, NULL);
@@ -39,4 +45,10 @@ void	assign_tab(t_stack **a, t_stack **b, int ac, char **av)
 	j = 0;
 	while (i > 0)
 		(*a)->tab[j++] = ft_atoi(av[i--]);
+	i = 0;
+	while (i < (int)(*a)->cap)
+	{
+		(*a)->index[i] = (*a)->tab[i];
+		i++;
+	}
 }
