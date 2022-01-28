@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 01:09:40 by nargouse          #+#    #+#             */
-/*   Updated: 2022/01/28 02:33:17 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/28 16:32:05 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	already_sorted(t_stack *a)
 	size_t	i;
 
 	i = 0;
-	while (i < a->len)
+	while (i < a->len - 1)
 	{
 		if (a->tab[i] < a->tab[i + 1])
 			return (0);
