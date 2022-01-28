@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 17:34:53 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/11 17:35:01 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/28 02:40:51 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,17 @@ char	*ft_strjoin_free(char const *s1, char const *s2)
 	i = 0;
 	j = 0;
 	while (s1[j])
-	{
-			result[i] = s1[j];
-			i++;
-			j++;
+	{	
+		result[i] = s1[j];
+		i++;
+		j++;
 	}
 	j = 0;
 	while (s2[j])
 	{
-			result[i] = s2[j];
-			i++;
-			j++;
+		result[i] = s2[j];
+		i++;
+		j++;
 	}
 	result[i] = '\0';
 	free((char *)s1);

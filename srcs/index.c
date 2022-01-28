@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/26 02:32:42 by nargouse          #+#    #+#             */
-/*   Updated: 2022/01/28 02:09:26 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/28 02:32:57 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	assign_index(t_stack *a)
 {
 	size_t	i;
 	size_t	j;
-	int	tmp;
+	int		tmp;
 
 	i = 0;
 	while (i < a->cap - 1)

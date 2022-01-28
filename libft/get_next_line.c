@@ -6,7 +6,7 @@
 /*   By: nargouse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 12:06:35 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/11 18:30:26 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/28 02:41:10 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@ static int	ft_if(char **left, char **tmp)
 {
 	*tmp = *left;
 	if (*left)
-			*left = ft_strdup(ft_strchr(*left, '\n') + 1);
+		*left = ft_strdup(ft_strchr(*left, '\n') + 1);
 	else
-			*left = ft_strdup(ft_strchr("", '\n') + 1);
+		*left = ft_strdup(ft_strchr("", '\n') + 1);
 	free(*tmp);
 	return (1);
 }
