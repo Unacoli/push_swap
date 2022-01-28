@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 18:55:30 by nargouse          #+#    #+#             */
-/*   Updated: 2022/01/27 22:54:29 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/28 14:12:44 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,17 +42,12 @@ void	pa(t_stack *a, t_stack *b);
 void	pb(t_stack *a, t_stack *b);
 void	ra(t_stack *a);
 void	rb(t_stack *b);
-void	rr(t_stack *a,t_stack *b);
+void	rr(t_stack *a, t_stack *b);
 void	rra(t_stack *a);
 void	rrb(t_stack *b);
 void	rrr(t_stack *a, t_stack *b);
 
 void	choose_algo(t_stack *a, t_stack *b);
-int		find_max(t_stack *stack);
-int		find_min(t_stack *stack);
-size_t	find_min_i(t_stack *a);
-int		scan_a_top(t_stack *stack, int min, int max);
-int		scan_a_bottom(t_stack *stack, int min, int max);
 void	sort_3(t_stack *a);
 void	sort_under_5(t_stack *a, t_stack *b);
 void	sort_over_5(t_stack *a, t_stack *b);

@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 01:03:57 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/19 12:00:23 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/28 14:11:46 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,10 @@ void	check_duplicate(t_stack *a, t_stack *b)
 	size_t	j;
 
 	i = 0;
-	while (i < a->len)
+	while (i < a->len - 1)
 	{
 		j = i + 1;
-		while (j < a->len)
+		while (j < a->len - 1)
 		{
 			if (a->tab[i] == a->tab[j])
 				quit(a, b);

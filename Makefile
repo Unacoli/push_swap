@@ -6,7 +6,7 @@
 #    By: nargouse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/01/07 14:54:05 by nargouse          #+#    #+#              #
-#    Updated: 2022/01/26 15:28:38 by nargouse         ###   ########.fr        #
+#    Updated: 2022/01/28 14:36:36 by nargouse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,9 @@ LIBFT	= ./libft/libft.a
 LIB	= $(LIBFT)
 CFLAGS	+= -Wall -Werror -Wextra -DLINUX
 
-SRCS	= $(addprefix ./srcs/, test.c main.c free.c pa.c pb.c ra.c rb.c rra.c\
-		  rrb.c rr.c rrr.c sa.c sb.c ss.c error.c stack.c sort.c sort_3.c\
-		  sort_under_5.c sort_over_5.c find.c index.c)
+SRCS	= $(addprefix ./srcs/, main.c free.c pa.c pb.c ra.c rb.c rra.c rrb.c\
+	  	rr.c rrr.c sa.c sb.c ss.c error.c stack.c sort.c sort_3.c\
+		sort_under_5.c sort_over_5.c index.c)
 
 OBJS	= $(SRCS:.c=.o)
 
@@ -40,14 +40,6 @@ clean:
 fclean:	clean
 	$(RM) $(NAME)
 	$(RM) $(LIBFT)
-
-test:
-	$(MAKE) --no-print-directory
-	./push_swap 1 1 || true
-	./push_swap nop || true
-	./push_swap || true
-	./push_swap 1 2 3 4 || true
-	./push_swap 3 2 4 1 || true
 
 norm:
 	norminette ./**/*.c ./**/*.h && echo Norm OK || echo /!\\ Norm KO /!\\
