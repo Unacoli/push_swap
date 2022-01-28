@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/16 02:56:21 by nargouse          #+#    #+#             */
-/*   Updated: 2022/01/28 00:49:49 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/28 02:22:14 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ int	get_index(t_stack *a, int n)
 	int	i;
 
 	i = 0;
-	while (a->index[i] < (int)a->cap)
+	while (i < (int)a->cap)
 	{
 		if (a->index[i] == n)
 			return (i);
 		i++;
 	}
-	return (-1);	
+	return (-1);
 }
 
 int	get_max_bits(t_stack *a)

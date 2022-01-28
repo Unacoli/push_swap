@@ -6,7 +6,7 @@
 /*   By: nargouse <nargouse@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/07 13:17:41 by nargouse          #+#    #+#             */
-/*   Updated: 2021/11/18 18:45:45 by nargouse         ###   ########.fr       */
+/*   Updated: 2022/01/28 02:22:35 by nargouse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ long	ft_atoi(const char *str)
 	s = 1;
 	if (str[i] == '-')
 	{
+		if (!ft_isdigit(str[i + 1]))
+			return (LONG_MIN);
 		s = -1;
 		i++;
 	}
